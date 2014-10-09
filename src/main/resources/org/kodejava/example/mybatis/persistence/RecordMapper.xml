@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : RecordMapper.xml
+    Created on : 20 de agosto de 2012, 11:19
+    Author     : pdiaz
+    Description:
+        Purpose of the document follows.
+-->
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.kodejava.example.mybatis.persistence.RecordMapper">
+
+    <resultMap id="recordResultMap" type="record">
+        <result column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="release_date" property="releaseDate"/>
+        <result column="artist_id" property="artistId"/>
+        <result column="label_id" property="labelId"/>
+    </resultMap>
+
+    <select id="getRecord" parameterType="int" resultMap="recordResultMap">
+        SELECT
+            id,
+            title,
+            release_date,
+            artist_id,
+            label_id,
+            created,
+            modified
+        FROM record
+        WHERE id = #{id}
+    </select>
+
+    <select id="getAllRecords" parameterType="int" resultMap="recordResultMap">
+       SELECT
+            id,
+            title,
+            release_date,
+            artist_id,
+            label_id,
+            created,
+            modified
+        FROM record;
+    </select>
+
+    <insert id="saveRecord" parameterType="record">
+        INSERT INTO record (id,
+            title,
+            release_date,
+            artist_id,
+            label_id,
+            created,
+            modified)
+        VALUES (#{id}, #{title}, #{releaseDate}, #{artistId}, #{labelId}, #{created}, #{modified})
+    </insert>
+
+    <update id="updateRecord" parameterType="record">
+        UPDATE record
+        SET
+        title = #{title},
+        release_date = #{releaseDate},
+        artist_id = #{artistId},
+        label_id = #{labelId},
+        created = #{created},
+        modified = #{modified}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteRecord" parameterType="record">
+        DELETE FROM record
+        WHERE id = #{id}
+    </delete>
+</mapper>
