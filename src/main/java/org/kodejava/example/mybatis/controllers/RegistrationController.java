@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+ *
+ * @author Cesardl
+ */
 @Controller
 @RequestMapping(value = "/registration")
 public class RegistrationController {
@@ -79,7 +83,7 @@ public class RegistrationController {
         validator.validate(record, result);
         ModelAndView mv = new ModelAndView("registration");
         if (!result.hasErrors()) {
-            recordMapper.deleteRecord(record.getId().intValue());
+            recordMapper.deleteRecord(record.getId());
             record = new Record();
             record.setId(generateId());
             mv.addObject("user", record);

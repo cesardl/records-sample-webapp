@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.kodejava.example.mybatis.domain;
 
 import java.io.Serializable;
@@ -9,7 +5,7 @@ import java.util.Date;
 
 /**
  *
- * @author pdiaz
+ * @author Cesardl
  */
 public class Record implements Serializable {
 

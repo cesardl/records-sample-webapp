@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.kodejava.example.mybatis;
 
 import java.io.Reader;
@@ -16,12 +12,13 @@ import org.kodejava.example.mybatis.persistence.RecordMapper;
 
 /**
  *
- * @author pdiaz
+ * @author Cesardl
  */
 public class MediaClient {
 
     /**
      * @param args the command line arguments
+     * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception {
         String resource = "org/kodejava/example/mybatis/Configuration.xml";

@@ -7,6 +7,10 @@ import org.springframework.validation.Validator;
 
 import org.kodejava.example.mybatis.domain.Record;
 
+/**
+ *
+ * @author Cesardl
+ */
 @Component
 public class RegistrationValidator implements Validator {
 
