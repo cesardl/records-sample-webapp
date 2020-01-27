@@ -1,4 +1,9 @@
-Records Sample Webapp
-=====================
+# Records Sample Webapp
 
-Records es un fork de un ejemplo sacado de kodejava.com el cual he refactorizado y configurado con maven y cambiando el orm a mybatis
+Records is a example fork from `kodejava.com` which I have refactored and configured with maven and changing the ORM to mybatis.
+
+## For database
+
+```sql
+CREATE DATABASE IF NOT EXISTS records CHARACTER SET utf8 COLLATE utf8_general_ci;
+```

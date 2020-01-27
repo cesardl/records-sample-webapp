@@ -4,12 +4,11 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- *
  * @author Cesardl
  */
 public class Record implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 4697710587956239579L;
     private Integer id;
     private String title;
     private Date releaseDate;
@@ -24,22 +23,6 @@ public class Record implements Serializable {
         modified = new Date();
     }
 
-    public Integer getArtistId() {
-        return artistId;
-    }
-
-    public void setArtistId(Integer artistId) {
-        this.artistId = artistId;
-    }
-
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -48,20 +31,12 @@ public class Record implements Serializable {
         this.id = id;
     }
 
-    public Integer getLabelId() {
-        return labelId;
+    public String getTitle() {
+        return title;
     }
 
-    public void setLabelId(Integer labelId) {
-        this.labelId = labelId;
-    }
-
-    public Date getModified() {
-        return modified;
-    }
-
-    public void setModified(Date modified) {
-        this.modified = modified;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Date getReleaseDate() {
@@ -72,12 +47,36 @@ public class Record implements Serializable {
         this.releaseDate = releaseDate;
     }
 
-    public String getTitle() {
-        return title;
+    public Integer getArtistId() {
+        return artistId;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setArtistId(Integer artistId) {
+        this.artistId = artistId;
+    }
+
+    public Integer getLabelId() {
+        return labelId;
+    }
+
+    public void setLabelId(Integer labelId) {
+        this.labelId = labelId;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getModified() {
+        return modified;
+    }
+
+    public void setModified(Date modified) {
+        this.modified = modified;
     }
 
     @Override

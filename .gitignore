@@ -1,5 +1,9 @@
 target/
 
+# IntelliJ
+.idea/
+*.iml
+
 # Eclipse
 .settings/
 .classpath

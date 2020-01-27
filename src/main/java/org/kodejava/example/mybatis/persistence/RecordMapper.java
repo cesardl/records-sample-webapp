@@ -1,10 +1,10 @@
 package org.kodejava.example.mybatis.persistence;
 
-import java.util.List;
 import org.kodejava.example.mybatis.domain.Record;
 
+import java.util.List;
+
 /**
- *
  * @author Cesardl
  */
 public interface RecordMapper {
@@ -18,26 +18,22 @@ public interface RecordMapper {
     Record getRecord(int id);
 
     /**
-     *
-     * @param record
+     * @param record entity to save.
      */
     void saveRecord(Record record);
 
     /**
-     *
-     * @param record
+     * @param record entity to update.
      */
     void updateRecord(Record record);
 
     /**
-     *
-     * @param id
+     * @param id record identifier.
      */
     void deleteRecord(int id);
 
     /**
-     *
-     * @return
+     * @return list of records.
      */
     List<Record> getAllRecords();
 }

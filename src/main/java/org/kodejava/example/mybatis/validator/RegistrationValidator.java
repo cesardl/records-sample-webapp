@@ -1,14 +1,12 @@
 package org.kodejava.example.mybatis.validator;
 
+import org.kodejava.example.mybatis.domain.Record;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import org.kodejava.example.mybatis.domain.Record;
-
 /**
- *
  * @author Cesardl
  */
 @Component

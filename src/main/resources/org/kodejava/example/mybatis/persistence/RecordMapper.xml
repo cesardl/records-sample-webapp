@@ -22,55 +22,53 @@
     </resultMap>
 
     <select id="getRecord" parameterType="int" resultMap="recordResultMap">
-        SELECT
-            id,
-            title,
-            release_date,
-            artist_id,
-            label_id,
-            created,
-            modified
+        SELECT id,
+               title,
+               release_date,
+               artist_id,
+               label_id,
+               created,
+               modified
         FROM record
         WHERE id = #{id}
     </select>
 
     <select id="getAllRecords" parameterType="int" resultMap="recordResultMap">
-       SELECT
-            id,
-            title,
-            release_date,
-            artist_id,
-            label_id,
-            created,
-            modified
+        SELECT id,
+               title,
+               release_date,
+               artist_id,
+               label_id,
+               created,
+               modified
         FROM record;
     </select>
 
-    <insert id="saveRecord" parameterType="record">
+    <insert id="saveRecord" parameterType="record" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
         INSERT INTO record (id,
-            title,
-            release_date,
-            artist_id,
-            label_id,
-            created,
-            modified)
+                            title,
+                            release_date,
+                            artist_id,
+                            label_id,
+                            created,
+                            modified)
         VALUES (#{id}, #{title}, #{releaseDate}, #{artistId}, #{labelId}, #{created}, #{modified})
     </insert>
 
     <update id="updateRecord" parameterType="record">
         UPDATE record
-        SET
-        title = #{title},
-        release_date = #{releaseDate},
-        artist_id = #{artistId},
-        label_id = #{labelId},
-        created = #{created},
-        modified = #{modified}
+        SET title        = #{title},
+            release_date = #{releaseDate},
+            artist_id    = #{artistId},
+            label_id     = #{labelId},
+            created      = #{created},
+            modified     = #{modified}
         WHERE id = #{id}
     </update>
 
     <delete id="deleteRecord" parameterType="record">
-        DELETE FROM record
+        DELETE
+        FROM record
         WHERE id = #{id}
     </delete>
 </mapper>

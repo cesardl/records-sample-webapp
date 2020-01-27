@@ -1,7 +1,7 @@
-var newRecordId;
-var addUrl = "app/registration/add";
-var deleteUrl = "app/registration/delete";
-var updateUrl = "app/registration/update";
+let newRecordId;
+let addUrl = "app/registration/add";
+let deleteUrl = "app/registration/delete";
+let updateUrl = "app/registration/update";
 
 function setUpdateForm(element){
     newRecordId = document.recordForm.id.value;
