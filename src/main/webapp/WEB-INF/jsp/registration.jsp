@@ -2,6 +2,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ page session="true" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -30,59 +31,67 @@
 </head>
 <body>
 <div class="container pt-4">
-    <fieldset>
-        <legend>Registration Form</legend>
-        <center>
+    <div>
+        <h3>Registration Form</h3>
+        <div class="mx-auto w-50">
             <form:form modelAttribute="record" action="/records/app/registration/add" name="recordForm">
 
                 <form:hidden path="id"/>
-                <table>
-                    <tr>
-                        <td colspan="2" align="left"><form:errors path="*" cssStyle="color : red;"/></td>
-                    </tr>
-                    <tr>
-                        <td>Title :</td>
-                        <td><form:input path="title"/></td>
-                    </tr>
-                    <tr>
-                        <td>Release Date :</td>
-                        <td><form:input path="releaseDate"/></td>
-                    </tr>
-                    <tr>
-                        <td>Artist Id :</td>
-                        <td><form:input path="artistId"/></td>
-                    </tr>
-                    <tr>
-                        <td>Label Id :</td>
-                        <td><form:input path="labelId"/></td>
-                    </tr>
-                    <tr>
-                        <td>Created :</td>
-                        <td><form:input path="created"/></td>
-                    </tr>
-                    <tr>
-                        <td>Modified :</td>
-                        <td><form:input path="modified"/></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="submit" value="Save Changes"/>
-                            &nbsp;<input type="reset" name="newRecord" value="New Record" onclick="setAddForm();"
-                                         disabled="disabled"/>
-                            &nbsp;<input type="submit" name="deleteRecord" value="Delete Record"
-                                         onclick="setDeleteForm();"
-                                         disabled="disabled"/>
-                        </td>
-                    </tr>
-                </table>
+
+                <spring:hasBindErrors name="record">
+                    <c:forEach var="error" items="${errors.allErrors}">
+                        <div class="alert alert-danger">
+                            <spring:message message="${error}"/>
+                        </div>
+                    </c:forEach>
+                </spring:hasBindErrors>
+
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <form:input path="title" cssClass="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="releaseDate">Release Date:</label>
+                    <form:input path="releaseDate" cssClass="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="artistId">Artist Id:</label>
+                    <form:input path="artistId" cssClass="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="labelId">Label Id:</label>
+                    <form:input path="labelId" cssClass="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="created">Created:</label>
+                    <form:input path="created" cssClass="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="modified">Modified:</label>
+                    <form:input path="modified" cssClass="form-control"/>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <input type="submit" class="btn btn-primary" value="Save Changes"/>
+                    </div>
+                    <div class="col">
+                        <input type="reset" class="btn btn-info" name="newRecord" value="New Record"
+                               onclick="setAddForm();"/>
+                    </div>
+                    <div class="col">
+                        <input type="submit" class="btn btn-danger" name="deleteRecord" value="Delete Record"
+                               onclick="setDeleteForm();" disabled="disabled"/>
+                    </div>
+                </div>
+
             </form:form>
-        </center>
-    </fieldset>
-    <c:if test="${!empty records}">
-        <br/>
-        <center>
+        </div>
+    </div>
+    <div>
+        <c:if test="${!empty records}">
+            <br/>
             <table class='table table-striped table-hover'>
-                <tr style="background-color: gray;">
+                <tr class="thead-dark">
                     <th>Title</th>
                     <th>Release Date</th>
                     <th>Artist Id</th>
@@ -101,10 +110,8 @@
                     </tr>
                 </c:forEach>
             </table>
-        </center>
-        <br/>
-
-    </c:if>
+        </c:if>
+    </div>
 </div>
 </body>
 </html>
