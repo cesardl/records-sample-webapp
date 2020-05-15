@@ -11,12 +11,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script type="text/javascript" src='<c:url value="/resources/common.js"/>'></script>
     <script type="text/javascript" src='<c:url value="/resources/registration.js"/>'></script>
     <script type="text/javascript">
         let projectUrl = '<c:url value="/"/>';
         if (projectUrl.indexOf(";", 0) != -1) {
             projectUrl = projectUrl.substring(0, projectUrl.indexOf(";", 0));
+        }
+
+        function changeSelectValue(selectNode, value) {
+            for (let index = 0; index < selectNode.length; index++) {
+                if (selectNode[index].value === value)
+                    selectNode.selectedIndex = index;
+            }
         }
     </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

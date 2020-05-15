@@ -1,5 +1,7 @@
 package org.kodejava.example.mybatis.controllers;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.kodejava.example.mybatis.domain.Record;
 import org.kodejava.example.mybatis.persistence.RecordMapper;
 import org.kodejava.example.mybatis.validator.RegistrationValidator;
@@ -23,6 +25,8 @@ import java.util.UUID;
 @RequestMapping(value = "/registration")
 public class RegistrationController {
 
+    private static final Logger logger = LogManager.getLogger(RegistrationController.class);
+
     private RegistrationValidator validator;
     private RecordMapper recordMapper;
 
@@ -38,8 +42,10 @@ public class RegistrationController {
 
     @GetMapping
     public String showForm(ModelMap model) {
+        logger.info("Loading records");
         List<Record> records = recordMapper.getAllRecords();
         model.addAttribute("records", records);
+        logger.debug("Getting {} records", records.size());
         Record record = new Record();
         record.setId(generateId());
         model.addAttribute("record", record);

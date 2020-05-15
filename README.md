@@ -1,6 +1,6 @@
 # Records Sample Webapp
 
-Records is a example fork from `kodejava.com` which I have refactored and configured with maven and changing the ORM to mybatis.
+Records is a example fork from `kodejava.org` which I have refactored and configured with maven and changing the ORM to mybatis.
 
 ## For database
 
