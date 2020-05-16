@@ -3,20 +3,25 @@ let addUrl = "app/registration/add";
 let deleteUrl = "app/registration/delete";
 let updateUrl = "app/registration/update";
 
-function setUpdateForm(element){
+function setUpdateForm(element) {
+    let releaseDate = $("#record-releaseDate-" + element).text();
+    let created = $("#record-created-" + element).text();
+    let modified = $("#record-modified-" + element).text();
+
     newRecordId = document.recordForm.id.value;
     trElement = document.getElementById(element);
+
     document.recordForm.id.value = element;
     document.recordForm.title.value = trElement.children[0].innerHTML;
-    document.recordForm.releaseDate.value = trElement.children[1].innerHTML;
+    $('#releaseDate').attr("value", releaseDate);
     document.recordForm.artistId.value = trElement.children[2].innerHTML;
-    document.recordForm.labelId.value =  trElement.children[3].innerHTML;
-    document.recordForm.created.value =  trElement.children[4].innerHTML;
-    document.recordForm.modified.value =  trElement.children[5].innerHTML;
+    document.recordForm.labelId.value = trElement.children[3].innerHTML;
+    $('#created').attr("value", created);
+    $('#modified').attr("value", modified);
     document.recordForm.action = projectUrl + updateUrl;
 }
 
-function setAddForm(){
+function setAddForm() {
     document.recordForm.id.value = newRecordId;
     document.recordForm.title.value = "";
     document.recordForm.releaseDate.value = "";
@@ -33,4 +38,3 @@ function setDeleteForm() {
     document.recordForm.action = projectUrl + deleteUrl;
     return true;
 }
-

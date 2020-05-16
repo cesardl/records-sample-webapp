@@ -1,5 +1,7 @@
 package org.kodejava.example.mybatis.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -11,10 +13,13 @@ public class Record implements Serializable {
     private static final long serialVersionUID = 4697710587956239579L;
     private Integer id;
     private String title;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date releaseDate;
     private Integer artistId;
     private Integer labelId;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date created;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date modified;
 
     public Record() {
