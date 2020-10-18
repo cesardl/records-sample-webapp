@@ -14,8 +14,7 @@
     <tx:annotation-driven/>
 
     <!-- Declare a datasource that has pooling capabilities -->
-    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
-          destroy-method="close" p:driverClass="${app.jdbc.driverClassName}"
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close"
           p:jdbcUrl="${app.jdbc.url}" p:user="${app.jdbc.username}" p:password="${app.jdbc.password}"
           p:acquireIncrement="10" p:idleConnectionTestPeriod="60" p:maxPoolSize="100"
           p:maxStatements="50" p:minPoolSize="3"/>
