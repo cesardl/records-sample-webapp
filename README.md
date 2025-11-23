@@ -5,5 +5,15 @@ Records is a example fork from `kodejava.org` which I have refactored and config
 ## For database
 
 ```sql
-CREATE DATABASE IF NOT EXISTS records CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS records CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+## Dockeryzing
+
+```
+docker build -t cesardlentelgy/records-sample-webapp:latest .
+```
+
+```
+docker run --name records-sample-webapp --network cesardl-bridge-network -p 8282:8080 -d cesardlentelgy/records-sample-webapp:latest
 ```

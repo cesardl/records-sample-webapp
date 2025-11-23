@@ -1,4 +1,4 @@
-let newRecordId;
+let newRecordId = 0;
 let addUrl = "app/registration/add";
 let deleteUrl = "app/registration/delete";
 let updateUrl = "app/registration/update";
@@ -9,7 +9,7 @@ function setUpdateForm(element) {
     let modified = $("#record-modified-" + element).text();
 
     newRecordId = document.recordForm.id.value;
-    trElement = document.getElementById(element);
+    let trElement = document.getElementById(element);
 
     document.recordForm.id.value = element;
     document.recordForm.title.value = trElement.children[0].innerHTML;
@@ -18,11 +18,12 @@ function setUpdateForm(element) {
     document.recordForm.labelId.value = trElement.children[3].innerHTML;
     $('#created').attr("value", created);
     $('#modified').attr("value", modified);
+    document.recordForm.deleteRecord.disabled = false;
     document.recordForm.action = projectUrl + updateUrl;
 }
 
 function setAddForm() {
-    document.recordForm.id.value = newRecordId;
+    document.recordForm.id.value = 0;
     document.recordForm.title.value = "";
     document.recordForm.releaseDate.value = "";
     document.recordForm.artistId.value = "";

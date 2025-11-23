@@ -35,7 +35,6 @@
 
     <!-- scan for mappers and let them be autowired -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <!--<property name="basePackage" value="${MapperInterfacePackage}" />-->
         <property name="basePackage" value="org.kodejava.example.mybatis.persistence"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>

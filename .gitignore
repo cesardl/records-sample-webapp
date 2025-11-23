@@ -3,6 +3,8 @@ target/
 # IntelliJ
 .idea/
 *.iml
+.smarttomcat/
+.scannerwork/
 
 # Eclipse
 .settings/

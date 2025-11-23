@@ -46,21 +46,21 @@ public class RegistrationController {
         List<Record> records = recordMapper.getAllRecords();
         model.addAttribute("records", records);
         logger.debug("Getting {} records", records.size());
-        Record record = new Record();
-        record.setId(generateId());
-        model.addAttribute("record", record);
+        Record r = new Record();
+        r.setId(generateId());
+        model.addAttribute("record", r);
         return "registration";
     }
 
     @PostMapping(value = "/add")
-    public ModelAndView add(@ModelAttribute(value = "record") Record record, BindingResult result) {
-        validator.validate(record, result);
+    public ModelAndView add(@ModelAttribute(value = "record") Record body, BindingResult result) {
+        validator.validate(body, result);
         ModelAndView mv = new ModelAndView("registration");
         if (!result.hasErrors()) {
-            recordMapper.saveRecord(record);
-            record = new Record();
-            record.setId(generateId());
-            mv.addObject("record", record);
+            recordMapper.saveRecord(body);
+            body = new Record();
+            body.setId(generateId());
+            mv.addObject("record", body);
         }
         mv.addObject("records", recordMapper.getAllRecords());
         return mv;
