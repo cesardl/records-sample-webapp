@@ -1,39 +1,56 @@
-/*
-Navicat MySQL Data Transfer
+-- MySQL dump 10.13  Distrib 5.7.44, for Linux (x86_64)
+--
+-- Host: localhost    Database: records
+-- ------------------------------------------------------
+-- Server version	5.7.44
 
-Source Server         : Local server
-Source Server Version : 50051
-Source Host           : localhost:3306
-Source Database       : test
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-Target Server Type    : MYSQL
-Target Server Version : 50051
-File Encoding         : 65001
+--
+-- Table structure for table `record`
+--
 
-Date: 2014-10-08 19:28:55
-*/
-
-SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for `record`
--- ----------------------------
 DROP TABLE IF EXISTS `record`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `record` (
-  `id` int(11) NOT NULL auto_increment,
-  `title` varchar(255) character set utf8 collate utf8_spanish_ci default NULL,
-  `release_date` timestamp NULL default NULL,
-  `artist_id` int(11) default NULL,
-  `label_id` int(11) default NULL,
-  `created` timestamp NULL default NULL,
-  `modified` timestamp NULL default NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1730429376 DEFAULT CHARSET=utf8;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
+  `release_date` timestamp NULL DEFAULT NULL,
+  `artist_id` int(11) DEFAULT NULL,
+  `label_id` int(11) DEFAULT NULL,
+  `created` timestamp NULL DEFAULT NULL,
+  `modified` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1730429408 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
--- ----------------------------
--- Records of record
--- ----------------------------
-INSERT INTO `record` VALUES ('215538419', 'ceasr', '2012-02-09 00:00:00', '12312', '31221', '2012-02-09 00:00:00', '2012-02-09 00:00:00');
-INSERT INTO `record` VALUES ('2312', 'Amigo', '2012-11-01 18:17:55', '23212', '34323', '2012-10-24 18:17:58', '2012-10-08 18:18:02');
-INSERT INTO `record` VALUES ('231', 'Kasdas', '2012-10-08 00:00:00', '343', '214', '2012-10-16 00:00:00', '2012-10-19 00:00:00');
-INSERT INTO `record` VALUES ('1730429375', 'Pablo', '2014-10-10 00:00:00', '121312', '53453453', '2014-10-10 00:00:00', '2014-10-10 00:00:00');
+--
+-- Dumping data for table `record`
+--
+
+LOCK TABLES `record` WRITE;
+/*!40000 ALTER TABLE `record` DISABLE KEYS */;
+INSERT INTO `record` VALUES (215538419,'Cesar','2012-02-09 05:00:00',12312,31221,'2012-02-09 05:00:00','2012-02-09 05:00:00'),(2312,'Amigo','2012-11-01 23:17:55',23212,34323,'2012-10-24 23:17:58','2012-10-08 23:18:02'),(231,'Kasdas','2012-10-08 05:00:00',343,214,'2012-10-16 05:00:00','2012-10-19 05:00:00'),(1730429375,'Pablo','2014-10-10 05:00:00',121312,53453453,'2014-10-10 05:00:00','2014-10-10 05:00:00'),(1661403116,'nSPlhKT282ozgjbSvZVwtzO0TIYdumyy','2025-11-23 05:00:00',444,454,'2025-11-23 05:00:00','2025-11-23 05:00:00'),(1730429407,'BXjnOZZwFZscnzvkLhFkyNa82PsUfgtG','2025-12-19 05:00:00',123,454,'2026-01-10 05:00:00','2026-01-08 05:00:00'),(348539028,'R1l4Q7Jwj5DNszcyGD9yDIMz70CS1MEg','2025-11-23 05:00:00',123,454,'2025-11-23 05:00:00','2025-11-23 05:00:00'),(175725713,'9dAxbAFecJzPYdhTDOzAdfGvCcOYxnl4','2025-11-23 05:00:00',567,453,'2025-11-23 05:00:00','2025-11-23 05:00:00'),(1730429379,'tGoVDUNgTpIxRW2TKf8csS4LJLlYZXXd','2025-11-12 05:00:00',567,566,'2025-11-27 05:00:00','2025-12-06 05:00:00'),(105601696,'xyrKXpMGdC7abeMGSlFfcARcUqvqVr2k','2025-11-23 05:00:00',444,453,'2025-11-23 05:00:00','2025-11-23 05:00:00'),(1730429380,'QTjtgWNupfCwUy4RWhOCvO5uU7JhcXH6','2025-11-05 05:00:00',444,566,'2025-11-28 05:00:00','2025-12-06 05:00:00'),(781936454,'zmtAFFziQY2jMLMHGtN1XUOTeWiI1bjR','2025-11-12 05:00:00',567,453,'2025-12-05 05:00:00','2026-01-09 05:00:00'),(1730429398,'ojT1DAqKnsnx0OuAt3H53Ar8vh3OiTJh','2025-11-05 05:00:00',444,566,'2025-11-27 05:00:00','2026-01-09 05:00:00'),(984771527,'4carUTFxwEm7Yeie6x5F2bqFmOUSRwFu','2025-11-25 05:00:00',343,453,'2025-11-25 05:00:00','2025-11-25 05:00:00'),(1730429401,'DaBP1lpn39bPRiiwXCXC1SGgDsXZdFjy','2025-11-07 05:00:00',123,888,'2025-12-06 05:00:00','2025-12-27 05:00:00'),(1440236482,'hmcR2bnFIIUaBeojzViE6o1tTrEJZn9E','2025-12-24 05:00:00',546,454,'2025-12-24 05:00:00','2025-12-24 05:00:00');
+/*!40000 ALTER TABLE `record` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2025-12-24 18:37:42
