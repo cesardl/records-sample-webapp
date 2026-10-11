@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-import java.util.UUID;
 
 /**
  * @author Cesardl
@@ -46,9 +45,7 @@ public class RegistrationController {
         List<Record> records = recordMapper.getAllRecords();
         model.addAttribute("records", records);
         logger.debug("Getting {} records", records.size());
-        Record r = new Record();
-        r.setId(generateId());
-        model.addAttribute("record", r);
+        model.addAttribute("record", new Record());
         return "registration";
     }
 
@@ -58,9 +55,7 @@ public class RegistrationController {
         ModelAndView mv = new ModelAndView("registration");
         if (!result.hasErrors()) {
             recordMapper.saveRecord(body);
-            body = new Record();
-            body.setId(generateId());
-            mv.addObject("record", body);
+            mv.addObject("record", new Record());
         }
         mv.addObject("records", recordMapper.getAllRecords());
         return mv;
@@ -72,9 +67,7 @@ public class RegistrationController {
         ModelAndView mv = new ModelAndView("registration");
         if (!result.hasErrors()) {
             recordMapper.updateRecord(record);
-            record = new Record();
-            record.setId(generateId());
-            mv.addObject("record", record);
+            mv.addObject("record", new Record());
         }
         mv.addObject("records", recordMapper.getAllRecords());
         return mv;
@@ -86,16 +79,9 @@ public class RegistrationController {
         ModelAndView mv = new ModelAndView("registration");
         if (!result.hasErrors()) {
             recordMapper.deleteRecord(record.getId());
-            record = new Record();
-            record.setId(generateId());
-            mv.addObject("record", record);
+            mv.addObject("record", new Record());
         }
         mv.addObject("records", recordMapper.getAllRecords());
         return mv;
-    }
-
-    private int generateId() {
-        int hash = UUID.randomUUID().hashCode();
-        return hash > 0 ? hash : hash * -1;
     }
 }
