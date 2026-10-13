@@ -23,15 +23,15 @@ DROP TABLE IF EXISTS `record`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `record` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `release_date` timestamp NULL DEFAULT NULL,
-  `artist_id` int(11) DEFAULT NULL,
-  `label_id` int(11) DEFAULT NULL,
+  `artist_id` int DEFAULT NULL,
+  `label_id` int DEFAULT NULL,
   `created` timestamp NULL DEFAULT NULL,
   `modified` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1730429408 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1730429408 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
