@@ -10,7 +10,7 @@
 
     <!-- Application Message Bundle -->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basename" value="/WEB-INF/messages.properties"/>
+        <property name="basename" value="/WEB-INF/messages"/>
         <property name="cacheSeconds" value="3000"/>
     </bean>
 
