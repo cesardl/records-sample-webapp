@@ -14,10 +14,13 @@ function setUpdateForm(element) {
     document.recordForm.id.value = element;
     document.recordForm.title.value = trElement.children[0].innerHTML;
     $('#releaseDate').attr("value", releaseDate);
+    $('#releaseDate-div').datepicker('update');
     document.recordForm.artistId.value = trElement.children[2].innerHTML;
     document.recordForm.labelId.value = trElement.children[3].innerHTML;
     $('#created').attr("value", created);
+    $('#created-div').datepicker('update');
     $('#modified').attr("value", modified);
+    $('#modified-div').datepicker('update');
     document.recordForm.deleteRecord.disabled = false;
     document.recordForm.action = projectUrl + updateUrl;
 }
