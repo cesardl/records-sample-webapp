@@ -45,14 +45,13 @@
     </select>
 
     <insert id="saveRecord" parameterType="record" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
-        INSERT INTO record (id,
-                            title,
+        INSERT INTO record (title,
                             release_date,
                             artist_id,
                             label_id,
                             created,
                             modified)
-        VALUES (#{id}, #{title}, #{releaseDate}, #{artistId}, #{labelId}, #{created}, #{modified})
+        VALUES (#{title}, #{releaseDate}, #{artistId}, #{labelId}, #{created}, #{modified})
     </insert>
 
     <update id="updateRecord" parameterType="record">

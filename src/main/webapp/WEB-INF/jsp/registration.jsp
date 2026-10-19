@@ -47,7 +47,7 @@
                 <div class="form-group">
                     <label for="title" class="col-sm-2 control-label">Title:</label>
                     <div class="col-sm-10">
-                        <form:input path="title" cssClass="form-control input-sm"/>
+                        <form:input path="title" cssClass="form-control input-sm" required="required" maxlength="255"/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -62,13 +62,15 @@
                 <div class="form-group">
                     <label for="artistId" class="col-sm-2 control-label">Artist Id:</label>
                     <div class="col-sm-10">
-                        <form:input path="artistId" cssClass="form-control input-sm"/>
+                        <form:input path="artistId" cssClass="form-control input-sm" type="number"
+                                    required="required" min="1" max="2147483647" step="1"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="labelId" class="col-sm-2 control-label">Label Id:</label>
                     <div class="col-sm-10">
-                        <form:input path="labelId" cssClass="form-control input-sm"/>
+                        <form:input path="labelId" cssClass="form-control input-sm" type="number"
+                                    required="required" min="1" max="2147483647" step="1"/>
                     </div>
                 </div>
                 <div class="form-group">
